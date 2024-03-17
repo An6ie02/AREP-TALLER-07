@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calculator.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form action="/sen" method="post">
+        <label for="value">Calculate Sin:</label>
+        <input type="text" id="valueSen" name="value">
+        <div id="getrespmsg1"> </div>
+        <input id="button-subb" type="button" value="Calculate" onclick="loadGetMsg1()">
+    </form>
+    <form action="/cos" method="post">
+        <label for="value">Calculate Cos:</label>
+        <input type="text" id="valueCos" name="value">
+        <div id="getrespmsg2"> </div>
+        <input id="button-subb2" type="button" value="Calculate" onclick="loadGetMsg2()">
+    </form>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
