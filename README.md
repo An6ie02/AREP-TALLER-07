@@ -66,7 +66,18 @@ git clone https://github.com/An6ie02/AREP-TALLER-07.git
 # Cambiar al directorio del repositorio
 cd AREP-TALLER-07
 ```
+Se crean los certificados para la comunicación segura con la aplicación:
 
+```bash
+# Crear un almacén de claves
+keytool -genkeypair -alias ecikeypair -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore ecikeystore.p12 -validity 3650
+# Crear un certificado autofirmado
+keytool -export -keystore ./ecikeystore.p12 -alias ecikeypair -file ecicert.cer
+# Importar el certificado en el almacén de confianza
+keytool -import -file ./ecicert.cer -alias firstCA -keystore myTrustStore.p12
+```
+
+![CreateKey](https://github.com/An6ie02/AREP-TALLER-07/assets/100453879/f7d53a4b-8308-4a5b-8c0d-42de85fb93c3)\
 Para ejecutar la aplicación en la instancia EC2, se deben seguir los siguientes pasos:
 
 ```bash
