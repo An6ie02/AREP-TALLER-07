@@ -57,17 +57,4 @@ public class LoginApp {
         return 4567;
     }
 
-    static String getTrustStore() {
-        if(System.getenv("TrustStore") != null){
-            return System.getenv("TrustStore");
-        }
-        return "certificates/myTrustStore.p12";
-    }
-
-    static String getKeyPassword() {
-        if(System.getenv("KeyPassword") != null){
-            return System.getenv("KeyPassword");
-        }
-        return "654321";
-    }
 }
